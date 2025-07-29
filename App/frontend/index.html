@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Diagnosis DBD</title>
+    <link rel="stylesheet" href="tampilan.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Aplikasi Diagnosis DBD</h1>
+        <p>Sistem Prediksi Demam Berdarah Dengue</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <div id="home-page" class="page active">
+        <div class="welcome-section">
+          <h2>Selamat Datang</h2>
+          <p>Pilih metode input data untuk diagnosis DBD:</p>
+        </div>
+
+        <div class="options-grid">
+          <a href="form-manual.html" class="option-card">
+            <div class="icon">📝</div>
+            <h3>Input Manual</h3>
+            <p>Masukkan data laboratorium secara manual</p>
+          </a>
+
+          <a href="form-csv.html" class="option-card">
+            <div class="icon">📊</div>
+            <h3>Upload CSV</h3>
+            <p>Upload file CSV untuk analisis batch</p>
+          </a>
+
+          <a href="hasil-diagnosa.html" class="option-card">
+            <div class="icon">📋</div>
+            <h3>Riwayat</h3>
+            <p>Lihat riwayat diagnosis sebelumnya</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

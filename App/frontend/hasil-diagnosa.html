@@ -1,0 +1,79 @@
+<!-- hasil-diagnosa.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riwayat Diagnosis</title>
+    <link rel="stylesheet" href="tampilan.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Riwayat Diagnosis</h1>
+        <p>Riwayat dan Statistik Diagnosis DBD</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="page-header">
+        <a href="index.html" class="back-btn">← Kembali</a>
+        <h2>Riwayat Diagnosis</h2>
+      </div>
+
+      <div class="history-controls">
+        <button onclick="loadHistory()" class="btn-secondary">Refresh</button>
+        <button onclick="loadStatistics()" class="btn-secondary">
+          Lihat Statistik
+        </button>
+        <button onclick="clearHistory()" class="btn-secondary">Hapus Riwayat</button>
+
+      </div>
+
+      <div id="history-content" class="history-content">
+        <p>Loading...</p>
+      </div>
+
+      <div id="stats-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h3>Statistik Diagnosis</h3>
+          <div id="stats-content"></div>
+        </div>
+    </main>
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Memproses...</p>
+    </div>
+
+    <div id="notification" class="notification hidden">
+      <span id="notification-message"></span>
+      <button onclick="hideNotification()">&times;</button>
+    </div>
+
+     <div id="csv-results" class="csv-results hidden">
+        <h3>Hasil Analisis Batch</h3>
+        <div id="csv-summary"></div>
+        <div id="csv-details"></div>
+      </div>
+    </main>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Memproses...</p>
+    </div>
+
+    <div id="notification" class="notification hidden">
+      <span id="notification-message"></span>
+      <button onclick="hideNotification()">&times;</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      loadHistory();
+    });
+  </script>
+  
+</html>

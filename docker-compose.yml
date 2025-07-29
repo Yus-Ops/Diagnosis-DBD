@@ -1,0 +1,11 @@
+services:
+  diagnosis-api:
+    build:
+      context: ./App
+      dockerfile: Backend/Dockerfile
+    volumes:
+      - .:/workspace                    # Mount seluruh proyek ke dalam /workspace
+    ports:
+      - "5000:5000"
+    working_dir: /workspace/App/Backend  # Set direktori kerja agar App.py bisa dijalankan langsung
+    restart: unless-stopped

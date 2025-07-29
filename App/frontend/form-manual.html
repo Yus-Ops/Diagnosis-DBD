@@ -1,0 +1,120 @@
+<!-- form-manual.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Manual - Diagnosis DBD</title>
+    <link rel="stylesheet" href="tampilan.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Input Manual</h1>
+        <p>Masukkan Data Laboratorium Pasien</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="page-header">
+        <a href="index.html" class="back-btn">← Kembali</a>
+        <h2>Input Data Manual</h2>
+      </div>
+
+      <form id="manual-form" class="input-form">
+        <div class="form-section">
+          <h3>Informasi Pasien</h3>
+          <div class="form-group">
+            <label for="patient-id">ID Pasien (Opsional)</label>
+            <input
+              type="text"
+              id="patient-id"
+              placeholder="Masukkan ID pasien"
+            />
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Data Laboratorium</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="wbc-count">WBC Count (/cumm) *</label>
+              <input type="number" id="wbc-count" step="0.01" required />
+            </div>
+            <div class="form-group">
+              <label for="platelet-count">Platelet Count (/cumm) *</label>
+              <input type="number" id="platelet-count" step="0.01" required />
+            </div>
+            <div class="form-group">
+              <label for="neutrophils">Neutrophils (%) *</label>
+              <input
+                type="number"
+                id="neutrophils"
+                step="0.01"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lymphocytes">Lymphocytes (%) *</label>
+              <input
+                type="number"
+                id="lymphocytes"
+                step="0.01"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="mpv">MPV (fl) *</label>
+              <input type="number" id="mpv" step="0.01" required />
+            </div>
+            <div class="form-group">
+              <label for="pdw">PDW (%) *</label>
+              <input type="number" id="pdw" step="0.01" required />
+            </div>
+            <div class="form-group">
+              <label for="hemoglobin">Hemoglobin (g/dl) *</label>
+              <input type="number" id="hemoglobin" step="0.01" required />
+            </div>
+            <div class="form-group">
+              <label for="hct">HCT (%) *</label>
+              <input
+                type="number"
+                id="hct"
+                step="0.01"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Diagnosa</button>
+          <button type="reset" class="btn-secondary">Reset</button>
+        </div>
+      </form>
+
+      <div id="result-section" class="result-section hidden">
+        <h3>Hasil Diagnosis</h3>
+        <div id="result-content"></div>
+      </div>
+    </main>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Memproses...</p>
+    </div>
+
+    <div id="notification" class="notification hidden">
+      <span id="notification-message"></span>
+      <button onclick="hideNotification()">&times;</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

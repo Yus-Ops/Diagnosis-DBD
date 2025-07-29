@@ -1,0 +1,71 @@
+<!-- form-csv.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload CSV - Diagnosis DBD</title>
+    <link rel="stylesheet" href="tampilan.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Upload CSV</h1>
+        <p>Unggah File CSV untuk Diagnosis Batch</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="page-header">
+        <a href="index.html" class="back-btn">← Kembali</a>
+        <h2>Upload File CSV</h2>
+      </div>
+
+      <div class="upload-section">
+        <div class="upload-info">
+          <h3>Format File CSV</h3>
+          <p>File CSV harus memiliki kolom berikut:</p>
+          <ul>
+            <li>wbc_count - Total WBC count(/cumm)</li>
+            <li>platelet_count - Total Platelet Count(/cumm)</li>
+            <li>neutrophils - Neutrophils(%)</li>
+            <li>lymphocytes - Lymphocytes(%)</li>
+            <li>mpv - MPV(fl)</li>
+            <li>pdw - PDW(%)</li>
+            <li>hemoglobin - Hemoglobin(g/dl)</li>
+            <li>hct - HCT(%)</li>
+          </ul>
+        </div>
+
+        <form id="csv-form" class="upload-form">
+          <div class="file-upload">
+            <input type="file" id="csv-file" accept=".csv" required />
+            <label for="csv-file" class="file-label">
+              <div class="upload-icon">📁</div>
+              <span>Pilih File CSV</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-primary">Upload & Analisis</button>
+        </form>
+      </div>
+
+      <div id="csv-results" class="csv-results hidden">
+        <h3>Hasil Analisis Batch</h3>
+        <div id="csv-summary"></div>
+        <div id="csv-details"></div>
+      </div>
+    </main>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Memproses...</p>
+    </div>
+
+    <div id="notification" class="notification hidden">
+      <span id="notification-message"></span>
+      <button onclick="hideNotification()">&times;</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
